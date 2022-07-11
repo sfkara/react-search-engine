@@ -12,10 +12,10 @@ export const ResultContextProvider = ({children}) =>{
     const [searchTerm , setSearchTerm ] = useState('')
 
 
-    const getResults =  async (url) => {
+    const getResults =  async (type) => {
         setisLoading(true)
 
-        const response = await fetch(`$(baseUrl)$(type)` , {
+        const response = await fetch(`${baseUrl}${type}` , {
             method:'GET',
             headers: {
                 'X-User-Agent': 'desktop',
@@ -25,6 +25,7 @@ export const ResultContextProvider = ({children}) =>{
               }
         });
         const data = await response.json();
+        console.log(data)
         setResults(data)
         setisLoading(false)
     }
