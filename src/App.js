@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Routes } from "./components/Routes";
+import { Results } from "./components/Results";
+import { Search } from "./components/Search";
 
 const App = () =>{
     const [darkTheme,setDarkTheme] = useState(false)
@@ -11,8 +12,8 @@ const App = () =>{
     return(
        <div className={darkTheme ? 'dark' : ''}>
             <div className="bg-gray-200 dark:bg-gray-900 text-gray-200 min-h-screen">
-                <Navbar d={darkTheme} s={setDarkTheme}/>
-                <Routes/>
+                <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+                <Results/>
                 <Footer/>
                 
             </div>
